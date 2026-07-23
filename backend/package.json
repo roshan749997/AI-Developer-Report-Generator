@@ -8,12 +8,14 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
-    "prestart": "npm run build",
     "start": "node dist/server.js",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "format": "prettier --write \"src/**/*.{ts,json}\""
+  },
+  "engines": {
+    "node": "20.x"
   },
   "dependencies": {
     "@google/genai": "^2.13.0",

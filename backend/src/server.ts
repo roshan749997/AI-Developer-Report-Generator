@@ -11,7 +11,8 @@ async function bootstrap(): Promise<void> {
   jobScheduler.start();
 
   const app = createApp();
-  const server = app.listen(env.PORT, () => {
+  // Bind 0.0.0.0 so Render (and other hosts) can detect the open port.
+  const server = app.listen(env.PORT, '0.0.0.0', () => {
     logger.info(
       {
         port: env.PORT,

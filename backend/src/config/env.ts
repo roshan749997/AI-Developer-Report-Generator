@@ -6,8 +6,13 @@ import { z } from 'zod';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 loadEnv({ path: path.resolve(__dirname, '../../.env') });
 
+const defaultNodeEnv =
+  process.env.RENDER || process.env.NODE_ENV === 'production'
+    ? 'production'
+    : 'development';
+
 const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+  NODE_ENV: z.enum(['development', 'test', 'production']).default(defaultNodeEnv),
   PORT: z.coerce.number().int().positive().default(4000),
   API_PREFIX: z.string().default('/api/v1'),
   CORS_ORIGIN: z.string().default('http://localhost:5173'),
