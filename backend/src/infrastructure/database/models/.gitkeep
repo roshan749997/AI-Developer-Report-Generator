@@ -1,0 +1,4 @@
+# =============================================================================
+# Infrastructure — Mongoose Models
+# Persistence models implementing domain repository contracts.
+# =============================================================================

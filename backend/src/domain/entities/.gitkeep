@@ -1,0 +1,5 @@
+# =============================================================================
+# Domain Layer
+# Enterprise business rules: entities and repository contracts.
+# No framework or infrastructure imports allowed here.
+# =============================================================================
